@@ -1,12 +1,20 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <div>
+    <Navigation/>
   </div>
   <router-view/>
 </template>
-
+<script>
+import "tailwindcss/tailwind.css"
+import Navigation from './components/navigation/Navigation.vue'
+export default {
+  components:{
+    Navigation
+  }
+}
+</script>
 <style lang="scss">
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

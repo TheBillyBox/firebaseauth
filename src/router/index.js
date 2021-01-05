@@ -1,5 +1,10 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
+import firebase from 'firebase'
 import Home from '../views/Home.vue'
+import Dashboard from '../views/Dashboard.vue'
+import Register from '../views/auth/register.vue'
+import Login from '../views/auth/login.vue'
+
 
 const routes = [
   {
@@ -8,18 +13,44 @@ const routes = [
     component: Home
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    path: '/register',
+    name: 'register',
+    component: Register
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: Login
+  },
+  {
+    path: '/dashboard',
+    name: 'dashboard',
+    component: Dashboard,
+    meta: {
+      requiresAuth: true
+    }
   }
 ]
 
 const router = createRouter({
   history: createWebHashHistory(),
   routes
+})
+
+//Comprobamos si necesita Auth
+router.beforeEach((to, from, next) => {
+  if(to.matched.some(ruta => ruta.meta.requiresAuth)){
+    const user = firebase.auth().currentUser;
+    if (user){
+      next();
+    }else{
+      next({
+        name: 'login'
+      })
+    }
+  }else {
+    next();
+  }
 })
 
 export default router
