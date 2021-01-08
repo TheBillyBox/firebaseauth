@@ -1,6 +1,6 @@
 <template>
 <div class="min-h-screen flex justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8 pt-9 mt-9">
-  <div class="max-w-md w-full space-y-8">
+  <div class="max-w-md min-w-1/2 space-y-8">
     <div>
       <img class="mx-auto h-12 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg" alt="Workflow">
       <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">
@@ -29,9 +29,9 @@
         </div>
 
         <div class="text-sm">
-          <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500">
+          <router-link to="forgotpsw" class="font-medium text-indigo-600 hover:text-indigo-500">
             Forgot your password?
-          </a>
+          </router-link>
         </div>
       </div>
 

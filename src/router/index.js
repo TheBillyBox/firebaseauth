@@ -1,16 +1,20 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import firebase from 'firebase'
-import Home from '../views/Home.vue'
+import Main from '../views/Main.vue'
 import Dashboard from '../views/Dashboard.vue'
-import Register from '../views/auth/register.vue'
-import Login from '../views/auth/login.vue'
+import Register from '../views/auth/Register.vue'
+import Login from '../views/auth/Login.vue'
+import ForgotPSW from '../views/auth/Forgotpsw.vue'
+import Earning from '../views/loged/Earning.vue'
+import Spending from '../views/loged/Spending.vue'
+import Porfile from '../views/auth/Porfile.vue'
 
 
 const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: Home
+    name: 'Main',
+    component: Main
   },
   {
     path: '/register',
@@ -23,13 +27,42 @@ const routes = [
     component: Login
   },
   {
+    path: '/forgotpsw',
+    name: 'forgotpsw',
+    component: ForgotPSW,
+  },
+  {
     path: '/dashboard',
     name: 'dashboard',
     component: Dashboard,
     meta: {
       requiresAuth: true
     }
-  }
+  },
+  {
+    path: '/earning',
+    name: 'earning',
+    component: Earning,
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
+    path: '/spending',
+    name: 'spending',
+    component: Spending,
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
+    path: '/porfile',
+    name: 'porfile',
+    component: Porfile,
+    meta: {
+      requiresAuth: true
+    }
+  },
 ]
 
 const router = createRouter({
