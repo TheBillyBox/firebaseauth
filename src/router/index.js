@@ -8,6 +8,7 @@ import ForgotPSW from '../views/auth/Forgotpsw.vue'
 import Earning from '../views/loged/Earning.vue'
 import Spending from '../views/loged/Spending.vue'
 import Porfile from '../views/auth/Porfile.vue'
+import Day from '../components/charts/Day.vue'
 
 
 const routes = [
@@ -62,6 +63,11 @@ const routes = [
     meta: {
       requiresAuth: true
     }
+  },
+  {
+    path: '/day',
+    name: 'day',
+    component: Day,
   },
 ]
 
