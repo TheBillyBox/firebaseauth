@@ -6,7 +6,7 @@ import Register from '../views/auth/Register.vue'
 import Login from '../views/auth/Login.vue'
 import ForgotPSW from '../views/auth/Forgotpsw.vue'
 import Earning from '../views/loged/Earning.vue'
-import Spending from '../views/loged/Spending.vue'
+import AddNewStock from '../views/loged/AddNewStock.vue'
 import Porfile from '../views/auth/Porfile.vue'
 import Day from '../components/charts/Day.vue'
 
@@ -49,9 +49,9 @@ const routes = [
     }
   },
   {
-    path: '/spending',
-    name: 'spending',
-    component: Spending,
+    path: '/addnew',
+    name: 'addnew',
+    component: AddNewStock,
     meta: {
       requiresAuth: true
     }
