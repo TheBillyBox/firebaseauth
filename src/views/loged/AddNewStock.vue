@@ -11,7 +11,7 @@
         Add new Stock
       </h2>
     </div>
-    <form class="mt-8 space-y-6" action="#" method="POST">
+    <form class="mt-8 space-y-6" action="WriteNewStock" @submit.prevent="WriteNewStock">
       <input type="hidden" name="remember" value="true">
       <div class="rounded-md shadow-sm -space-y-px">
         <div>
@@ -24,11 +24,11 @@
         </div>
         <div>
           <label for="password" class="sr-only">purchase price</label>
-          <input id="price" v-model="precioCompra" name="price" type="number" autocomplete="current-password" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Ej. 150">
+          <input id="price" v-model="precioDeCompra" name="price" type="number" autocomplete="current-password" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Ej. 150">
         </div>
       </div>
       <div>
-        <button type="submit" v-on:click="agregar()" class="group relative min-w-100 flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+        <button type="submit"  class="group relative min-w-100 flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
           Add
         </button>
       </div>
@@ -43,20 +43,17 @@ let Acciones = db.ref('Acciones');
 
 export default {
   name: 'App',
-  
-  firebase: {
+  Firebase: {
      Acciones: Acciones
   },
   data(){
     return {
       user: '',
-      nuevaAccion: {
-        userID: '',
-        cantidad: '',
-        precioCompra: '',
-        ticket: '',
-      },
+      cantidad: '',
+      precioDeCompra: '',
+      ticket: '',
       Acciones: [],
+      numero: 0
     }
   },
   created () {
@@ -68,32 +65,25 @@ export default {
       }
     })
   },
-  getStocks: function(){
-    var that = this;
-    Firebase.auth().onAuthStateChanged(function(user) {
-      if (user) {
-        that.is_signed = true;
-        that.$bindAsArray('compras', db.ref('Acciones/' + user.uid));
-      } else {
-        that.is_signed = false;
-        this.Acciones = [];
-      }
-    })
-  },
-  methods:{
-    agregar: function() {
-      this.userID = this.user.uid
-      Acciones.push(this.nuevaAccion, function(error){
-        if (error){
-          console.log('Error al intentar agregar el registro.', 'Aviso');
-        }else{          
-          console.log('Registro agregado correctamente.', 'Aviso');
+  methods: {
+    WriteNewStock(){
+      if (this.cantidad && this.precioDeCompra && this.ticket){
+         const res = Firebase.database().ref('Acciones/' + this.numero).set({
+          Cantidad: this.cantidad,
+          PrecioCompra: this.precioDeCompra,
+          Ticket: this.ticket,
+          userID: this.user.uid,
+        }).then((u) => {
+          this.cantidad = ''
+          this.precioDeCompra = ''
+          this.ticket = ''
+          console.log(u)
+          ++this.numero
+        }).catch((err => console.log(err)))
+        console.log(res.id)
         }
-      });
-      this.nuevaAccion.cantidad = '';
-      this.nuevaAccion.precioCompra = ''; 
-      this.nuevaAccion.ticket = ''
-    },
+      } 
+    }
   }
-}
+
 </script>

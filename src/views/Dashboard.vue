@@ -11,7 +11,7 @@
                     <p class="p-4 pt-1 pb-1 text-xl">KO = 5€</p>
                     <p class="p-4 pt-1 pb-1 text-xl">TSLA = 5€</p>
                     <p class="p-4 pt-1 pb-1 text-xl">GOOGL = 5€</p>
-                    <p class="p-4 pt-1 pb-1 text-xl">NIU = 5€</p>
+                    <p class="p-4 pt-1 pb-5 text-xl">NIU = 5€</p>
                 </div>
             </div> 
             <div class=" pt-9 inset-y-0 right-0 absolute inline-block max-w-50 min-w-50 max-h-50 min-h-50">

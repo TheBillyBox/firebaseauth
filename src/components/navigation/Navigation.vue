@@ -1,6 +1,6 @@
 <template>
     <!-- This example requires Tailwind CSS v2.0+ -->
-<nav class="bg-gray-800">
+<nav class="bg-nav">
   <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
     <div class="relative flex items-center justify-between h-16">
       <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -35,9 +35,9 @@
         <div v-if="user" class="hidden sm:block sm:ml-6">
           <div class="flex space-x-4">
             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-            <router-link to="dashboard" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Dashboard</router-link>
-            <router-link to="earning"  class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Earning</router-link>
-            <router-link to="addnew"  class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Add New Stock</router-link>
+            <router-link to="dashboard" class="text-white hover:bg-hoverNav hover:text-white px-3 py-2 rounded-md text-sm font-medium">Dashboard</router-link>
+            <router-link to="ViewStocks"  class="text-white hover:bg-hoverNav hover:text-white px-3 py-2 rounded-md text-sm font-medium">View my stocks</router-link>
+            <router-link to="addnew"  class="text-white hover:bg-hoverNav hover:text-white px-3 py-2 rounded-md text-sm font-medium">Add New Stock</router-link>
           </div>
         </div>
       </div>
@@ -50,7 +50,7 @@
           <!-- Profile dropdown -->
           <div class="ml-3 relative">
             <div>
-              <button type="button" @click="isOpen = !isOpen"  class="text-gray-200 bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" id="user-menu" aria-haspopup="true">
+              <button type="button" @click="isOpen = !isOpen"  class="p-1 text-gray-200 bg-nav flex text-sm rounded-full hover:bg-hoverNav focus:outline-none" id="user-menu" aria-haspopup="true">
                 {{user.email || user.displayName}}
               </button>
             </div>
@@ -77,7 +77,7 @@
             <div class="hidden sm:block sm:ml-6">
           <div class="flex space-x-4">
             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-            <router-link to="/login" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium">Login</router-link>
+            <router-link to="login" class="bg-primary text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Login</router-link>
             <router-link to="register" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Register</router-link>
           </div>
         </div>
@@ -97,9 +97,9 @@
   <div class="hidden sm:hidden">
     <div class="px-2 pt-2 pb-3 space-y-1">
       <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-      <router-link to="/dashboard" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Dashboard</router-link>
-      <router-link to="earning" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Summary</router-link>
-      <router-link to="spending" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Add new stock</router-link>
+      <router-link to="dashboard" class="text-white hover:bg-hoverNav hover:text-white block px-3 py-2 rounded-md text-base font-medium">Dashboard</router-link>
+      <router-link to="ViewStocks" class="text-white hover:bg-hoverNav hover:text-white block px-3 py-2 rounded-md text-base font-medium">View my stocks</router-link>
+      <router-link to="addnew" class="text-white hover:bg-hoverNav hover:text-white block px-3 py-2 rounded-md text-base font-medium">Add new stock</router-link>
     </div>
   </div>
 </nav>

@@ -5,11 +5,12 @@ import Dashboard from '../views/Dashboard.vue'
 import Register from '../views/auth/Register.vue'
 import Login from '../views/auth/Login.vue'
 import ForgotPSW from '../views/auth/Forgotpsw.vue'
-import Earning from '../views/loged/Earning.vue'
+import ViewStocks from '../views/loged/ViewStocks.vue'
 import AddNewStock from '../views/loged/AddNewStock.vue'
 import Porfile from '../views/auth/Porfile.vue'
 import Day from '../components/charts/Day.vue'
-
+import AAPL from '../components/charts/Tickets/AAPL.vue'
+import Changepsw from '../views/auth/Changepsw.vue'
 
 const routes = [
   {
@@ -41,9 +42,9 @@ const routes = [
     }
   },
   {
-    path: '/earning',
-    name: 'earning',
-    component: Earning,
+    path: '/ViewStocks',
+    name: 'ViewStocks',
+    component: ViewStocks,
     meta: {
       requiresAuth: true
     }
@@ -65,9 +66,22 @@ const routes = [
     }
   },
   {
+    path: '/changepsw',
+    name: 'changepsw',
+    component: Changepsw,
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
     path: '/day',
     name: 'day',
     component: Day,
+  },
+  {
+    path: '/AAPL',
+    name: 'AAPL',
+    component: AAPL,
   },
 ]
 

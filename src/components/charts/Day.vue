@@ -10,30 +10,27 @@
 <script>
 import ChartDialyDashboard from '../../charts/dashboard/chart-day.js'
 import Chart from 'chart.js';
-	export default {
-		name: 'day',
-		components: {
-			
-		},
-		data: function () {
-			return {
-                ChartDialyDashboard: ChartDialyDashboard,
-			}
-		},
-		methods: {
-			createChart (chartId, chartData) {
-				const ctx = document.getElementById(chartId);
-				const myChart = new Chart(ctx, {
-					type: chartData.type,
-					data: chartData.data,
-					options: chartData.options,
-				})
-				console.log(myChart)
-			}
-		},
-		mounted() {
-			this.createChart('day-chart', this.ChartDialyDashboard);
-		},
+export default {
+	name: 'day',
+	data: function () {
+		return {
+            ChartDialyDashboard: ChartDialyDashboard,
+		}
+	},
+	methods: {
+		createChart (chartId, chartData) {
+			const ctx = document.getElementById(chartId);
+			const myChart = new Chart(ctx, {
+				type: chartData.type,
+				data: chartData.data,
+				options: chartData.options,
+			})
+			console.log(myChart)
+		}
+	},
+	mounted() {
+		this.createChart('day-chart', this.ChartDialyDashboard);
+	},
 }
 </script>
 
