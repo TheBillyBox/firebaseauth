@@ -120,7 +120,7 @@ export default {
     
     logout() {
       firebase.auth().signOut().then(() => {
-        this.$router.push({name: 'login'})
+        this.$router.push({name: 'Main'})
       })
     },    
   },

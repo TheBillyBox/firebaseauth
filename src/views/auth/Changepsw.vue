@@ -28,7 +28,7 @@
 </div>
 </template>
 <script>
-import firebase from 'firebase'
+//import firebase from 'firebase'
 import  '@/firebase/init.js'
 export default {
     name: 'Login',
@@ -39,10 +39,10 @@ export default {
             user: '',
         }
     },
-    methods: {
+    /*methods: {
       changePsw(){
           this.error = ''
-          if (this.password){
+          if (this.password && this.user != null){
               firebase.auth().updateCurrentUser(this.password)
                   .then(user => {
                       this.$router.push({name: 'porfile'})
@@ -53,7 +53,7 @@ export default {
                   })
                 
           }else{
-              this.error = 'Todos los campos son requeridos'
+              this.error = 'Todos los campos son requeridos o no tienes ninguna sesión iniciada'
           }
         },
     },
@@ -65,6 +65,6 @@ export default {
                 this.user = null
             }
         })
-    }
+    }*/
 }
 </script>

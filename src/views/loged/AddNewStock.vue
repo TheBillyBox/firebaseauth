@@ -1,5 +1,5 @@
 <template>
-    <div class="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+    <div class="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
   <div class="max-w-md min-w-25 space-y-8">
     <ul>
       <li v-for="data in Acciones" v-bind:key="data">
@@ -16,19 +16,19 @@
       <div class="rounded-md shadow-sm -space-y-px">
         <div>
           <label for="symbol" class="sr-only">Symbol</label>
-          <input id="symbol" v-model="ticket" name="symbol" type="text" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Ej. AAPL">
+          <input id="symbol" v-model="ticket" name="symbol" type="text" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-primary focus:z-10 sm:text-sm" placeholder="Ej. AAPL">
         </div>
         <div>
           <label for="password" class="sr-only">Amount</label>
-          <input id="password" v-model="cantidad" name="password" type="number" autocomplete="current-password" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Ej. 8">
+          <input id="password" v-model="cantidad" name="password" type="number" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-primary focus:z-10 sm:text-sm" placeholder="Ej. 8">
         </div>
         <div>
           <label for="password" class="sr-only">purchase price</label>
-          <input id="price" v-model="precioDeCompra" name="price" type="number" autocomplete="current-password" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Ej. 150">
+          <input id="price" v-model="precioDeCompra" name="price" type="number" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-primary focus:z-10 sm:text-sm" placeholder="Ej. 150">
         </div>
       </div>
       <div>
-        <button type="submit"  class="group relative min-w-100 flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+        <button type="submit"  class="group relative min-w-100 flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-primary hover:bg-hoverPrimary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
           Add
         </button>
       </div>
@@ -68,7 +68,7 @@ export default {
   methods: {
     WriteNewStock(){
       if (this.cantidad && this.precioDeCompra && this.ticket){
-         const res = Firebase.database().ref('Acciones/' + this.numero).set({
+         const res = Firebase.database().ref('Acciones/' + this.user.uid + this.numero).set({
           Cantidad: this.cantidad,
           PrecioCompra: this.precioDeCompra,
           Ticket: this.ticket,
