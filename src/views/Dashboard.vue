@@ -1,16 +1,16 @@
 <template>
     <div class="mt-6 pt-8">
         <h1 class="text-3xl font-bold">Summary</h1>
-        <div class="bg-gray-100 grid grid-cols-2  h-auto m-5 rounded-xl relative">
+        <section class="bg-gray-100 sm:grid sm:grid-cols-2  h-auto m-5 rounded-xl relative">
                 <div class="mr-9 ml-9">
-                    <p class="p-3 pt-10 mt-10 text-4xl text-center align-middle m-auto"> Stock earning</p>
-                    <p class="p-3 pt-9 text-3xl text-center align-middle m-auto">{{balance}}€</p>
+                    <p class="p-3 pt-10 mt-10 text-3xl sm:text-4xl text-center align-middle m-auto"> Stock earning</p>
+                    <p class="pb-3 pt-9 text-3xl sm:text-3xl text-center align-middle m-auto">{{balance}}€</p>
                 </div>
-            <div class="p-10">
+            <div class="sm:p-10">
                 <LWeek/>
             </div> 
-        </div>
-        <div class="space-x-9 pt-3">
+        </section>
+        <section class="space-x-9 pt-3">
             <!-- Frist Box -->
             <div class="bg-gray-100 min-w-90 h-full inline-flex rounded-xl m-10">
                 <div class="w-full">
@@ -43,7 +43,7 @@
                    </ul>
                 </div>
             </div>
-        </div>
+        </section>
     </div>
 </template>
 <script>

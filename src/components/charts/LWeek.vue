@@ -1,6 +1,6 @@
 <template>
   <div class="inset-y-0 right-0">
-	<div class="max-h-50">
+	<div class="">
     <canvas id="lweek-chart"></canvas>
 	</div>
   </div>

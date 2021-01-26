@@ -53,7 +53,6 @@ export default {
       precioDeCompra: '',
       ticket: '',
       Acciones: [],
-      numero: 0
     }
   },
   created () {
@@ -68,19 +67,16 @@ export default {
   methods: {
     WriteNewStock(){
       if (this.cantidad && this.precioDeCompra && this.ticket){
-         const res = Firebase.database().ref('Acciones/' + this.user.uid + this.numero).set({
+        db.ref('Acciones/' + this.user.uid).push({
           Cantidad: this.cantidad,
           PrecioCompra: this.precioDeCompra,
           Ticket: this.ticket,
-          userID: this.user.uid,
         }).then((u) => {
           this.cantidad = ''
           this.precioDeCompra = ''
           this.ticket = ''
           console.log(u)
-          ++this.numero
         }).catch((err => console.log(err)))
-        console.log(res.id)
         }
       } 
     }

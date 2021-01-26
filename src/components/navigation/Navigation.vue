@@ -5,7 +5,7 @@
     <div class="relative flex items-center justify-between h-16">
       <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
         <!-- Mobile menu button-->
-        <button class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-expanded="false">
+        <button @click="isOpenM = !isOpenM" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-expanded="false">
           <span class="sr-only">Open main menu</span>
           <!-- Icon when menu is closed. -->
           <!--
@@ -86,18 +86,15 @@
       </div>
     </div>
   </div>
-  
-
-
   <!--
     Mobile menu, toggle classes based on menu state.
 
     Menu open: "block", Menu closed: "hidden"
   -->
-  <div class="hidden sm:hidden">
+  <div v-if="isOpenM" class="sm:hidden">
     <div class="px-2 pt-2 pb-3 space-y-1">
       <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-      <router-link to="dashboard" class="text-white hover:bg-hoverNav hover:text-white block px-3 py-2 rounded-md text-base font-medium">Dashboard</router-link>
+      <router-link to="dashboard" class="text-white hover:bg-hoverNav hover:text-white block px-3 py-2 rounded-md text-base font-medium">Dasboard</router-link>
       <router-link to="ViewStocks" class="text-white hover:bg-hoverNav hover:text-white block px-3 py-2 rounded-md text-base font-medium">View my stocks</router-link>
       <router-link to="addnew" class="text-white hover:bg-hoverNav hover:text-white block px-3 py-2 rounded-md text-base font-medium">Add new stock</router-link>
     </div>
@@ -113,6 +110,7 @@ export default {
   data () {
     return {
       isOpen: false,
+      isOpenM: false,
       user: null
     }
   },  
