@@ -1,5 +1,5 @@
 <template>
-<div class="m-auto min-h-screen block max-w-30 justify-center py-12 px-4 sm:px-6 lg:px-8 pt-9 mt-9">
+<div class="m-auto min-h-screen block sm:max-w-30 justify-center py-12 px-4 sm:px-6 lg:px-8 pt-9 mt-9">
   <div class="max-w-md min-w-1/2 space-y-6">
     <div>
       <img class="mx-auto h-12 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg" alt="Workflow">

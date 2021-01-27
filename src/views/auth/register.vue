@@ -1,6 +1,6 @@
 <template>
-<div class="m-auto min-h-screen block max-w-30 justify-center py-12 px-4 sm:px-6 lg:px-8 pt-9 mt-9">
-  <div class="max-w-md min-w-1/2 space-y-8">
+<div class="m-auto min-h-screen block sm:max-w-60 justify-center py-12 px-4 sm:px-6 lg:px-8 pt-9 mt-9">
+  <div class="max-w-md min-w-2/3 space-y-8">
     <div>
       <img class="mx-auto h-12 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg" alt="Workflow">
       <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">
@@ -38,10 +38,24 @@
         </button>
       </div>
     </form>
+    <div class="mt-1 block justify-center">
+      <h2 class="m-auto text-l text-center">Or continue with</h2>
+      <div class="flex mt-4 justify-center">
+          <button class="w-11 h-11 ml-8 mr-8" @click="loginGoogle">
+            <img src="../../media/google.png" alt="">
+          </button>
+          <button class="w-11 h-11 ml-8 mr-8">
+            <img src="../../media/facebook.png" alt="">
+          </button>
+          <button class="w-11 h-11 ml-8 mr-8">
+            <img src="../../media/twitter.png" alt="">
+          </button>
+      </div>
   </div>
   <div class=" m-auto justify-center mt-9 bg-alert flex" v-if="error">
     {{error}}
   </div>
+</div>
 </div>
 </template>
 <script>

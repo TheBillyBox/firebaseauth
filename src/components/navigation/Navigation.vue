@@ -51,7 +51,7 @@
           <div class="ml-3 relative">
             <div>
               <button type="button" @click="isOpen = !isOpen"  class="p-1 text-gray-200 bg-nav flex text-sm rounded-full hover:bg-hoverNav focus:outline-none" id="user-menu" aria-haspopup="true">
-                {{user.email || user.displayName}}
+                {{user.displayName||user.email}}
               </button>
             </div>
             <!--
@@ -74,11 +74,11 @@
         </template>
         <template v-else>
           <div>
-            <div class="hidden sm:block sm:ml-6">
+            <div class=" sm:block sm:ml-6">
           <div class="flex space-x-4">
             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-            <router-link to="login" class="bg-primary text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Login</router-link>
-            <router-link to="register" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Register</router-link>
+            <router-link to="login" class="hidden sm:bg-primary text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium sm:block">Login</router-link>
+            <router-link to="register" class=" text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Register</router-link>
           </div>
         </div>
           </div>

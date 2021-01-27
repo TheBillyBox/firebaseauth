@@ -4,7 +4,7 @@ export const ChartLWeek = {
         labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri',],
         datasets: [
             { // one line graph
-              label: 'Income',
+              label: 'Earning',
               data: [2, 5, 2, 10, 11,],
               backgroundColor: [
                 'rgba(54,73,93,.5)', // Blue
@@ -37,7 +37,7 @@ export const ChartLWeek = {
             yAxes: [{
               ticks: {
                 beginAtZero: true,
-                padding: 25,
+                padding: 1,
               }
             }]
           }

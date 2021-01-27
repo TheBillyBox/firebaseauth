@@ -16,15 +16,15 @@
       <div class="rounded-md shadow-sm -space-y-px">
         <div>
           <label for="symbol" class="sr-only">Symbol</label>
-          <input id="symbol" v-model="ticket" name="symbol" type="text" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-primary focus:z-10 sm:text-sm" placeholder="Ej. AAPL">
+          <input id="symbol" v-model="ticket" name="symbol" type="text" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-primary focus:z-10 sm:text-sm" placeholder="Ticket: Ej. AAPL">
         </div>
         <div>
           <label for="password" class="sr-only">Amount</label>
-          <input id="password" v-model="cantidad" name="password" type="number" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-primary focus:z-10 sm:text-sm" placeholder="Ej. 8">
+          <input id="password" v-model="cantidad" name="password" type="number" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-primary focus:z-10 sm:text-sm" placeholder="Amount: Ej. 8">
         </div>
         <div>
           <label for="password" class="sr-only">purchase price</label>
-          <input id="price" v-model="precioDeCompra" name="price" type="number" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-primary focus:z-10 sm:text-sm" placeholder="Ej. 150">
+          <input id="price" v-model="precioDeCompra" name="price" type="number" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-primary focus:z-10 sm:text-sm" placeholder="Purchase Price:Ej. 150">
         </div>
       </div>
       <div>
