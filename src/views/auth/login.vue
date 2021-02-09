@@ -1,12 +1,12 @@
 <template>
 <div class="m-auto min-h-screen block sm:max-w-30 justify-center py-12 px-4 sm:px-6 lg:px-8 pt-9 mt-9">
   <div class="max-w-md min-w-1/2 space-y-6">
-    <div>
+    <section>
       <img class="mx-auto h-12 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg" alt="Workflow">
       <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">
         Login in your account
       </h2>
-    </div>
+    </section>
     <form class="mt-8 space-y-6" action="#" @submit.prevent="login">
       <input type="hidden" name="remember" value="true">
       <div class="rounded-md shadow-sm -space-y-px">
@@ -41,7 +41,7 @@
         </button>
       </div>
     </form>
-      <div class="mt-1 block justify-center">
+    <section class="mt-1 block justify-center">
       <h2 class="m-auto text-l text-center">Or continue with</h2>
       <div class="flex mt-4 justify-center">
           <button class="w-11 h-11 ml-8 mr-8" @click="loginGoogle">
@@ -54,7 +54,7 @@
             <img src="../../media/twitter.png" alt="">
           </button>
       </div>
-    </div>
+    </section>
   </div>
   <div class=" m-auto justify-center mt-9 bg-alert flex" v-if="error">
     {{error}}

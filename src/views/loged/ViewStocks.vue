@@ -12,42 +12,38 @@
                 </div>
             </div>
         </div>
-        <div>
-            {{this.stocksRef}}
+        <div v-for="accion in Acciones" v-bind:key="accion">
+            <p>{{accion}}</p>
         </div>
     </div>
 </template>
 <script>
 //import AAPL from'../../components/charts/Tickets/AAPL.vue'
 import firebase from 'firebase'
-//let db = firebase.database();
+let db = firebase.database();
 export default {
     name: 'ViewStocks',
-    components: {
-//        AAPL,
-    },
     data() {
         return {
             stocksRef: '',
             user: '',
+            Acciones:[],
         }
     },
-    created () {
+    async created () {
         firebase.auth().onAuthStateChanged(user => {
             if (user) {
                 this.user = user        
             } else {
                 this.user = null
             }
-        })
-        
+        });
+    await db.ref('Acciones/' + this.user.uid + '/').once('value').then((snapshot) => {
+        console.log(snapshot.val())
+    })
         
   },
   methods: {
-      getStocks(){
-        const stocks = firebase.database().ref('Acciones/' + this.user.uid).orderByChild('starCount');
-        this.stocksRef = stocks
-      }
     }
 }
 </script>

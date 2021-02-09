@@ -34,17 +34,18 @@
       </div>
     </form>
   </div>
+  {{this.Acciones}}
 </div>
 </template>
 <script>
 import Firebase from 'firebase'
 let db = Firebase.database();
-let Acciones = db.ref('Acciones');
+let AccionesRef = db.ref('Acciones');
 
 export default {
   name: 'App',
   Firebase: {
-     Acciones: Acciones
+     Acciones: AccionesRef
   },
   data(){
     return {
@@ -52,7 +53,6 @@ export default {
       cantidad: '',
       precioDeCompra: '',
       ticket: '',
-      Acciones: [],
     }
   },
   created () {
